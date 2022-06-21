@@ -27,7 +27,7 @@ with DAG(
 
     # python Operator에서 사용할 함수 정의
     def print_hello():
-        print('Hello World')
+        print('hello world')
 
     t1 = DummyOperator(
         task_id='dummy_task_id',
