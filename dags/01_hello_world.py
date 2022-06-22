@@ -39,4 +39,5 @@ with DAG(
         python_callable=print_hello
     )
 
+    # 간단한 의존성 작성
     t1 >> t2
