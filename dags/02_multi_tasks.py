@@ -18,16 +18,21 @@ with DAG(
     schedule_interval="@daily",
     tags=['test', 'multi tasks']
 ) as dag:
+
+    # 잠깐 멈추는 함수 만들기 
     def dump() -> None:
         sleep(3)
 
+    # 시작 함수
     start = PythonOperator(task_id='start', python_callable=dump)
 
+    # 여러 태스크 동시 실행 할 수 있게 생성
     task_1 = PythonOperator(task_id='task_1', python_callable=dump)
     task_2 = PythonOperator(task_id='task_2', python_callable=dump)
     task_3 = PythonOperator(task_id='task_3', python_callable=dump)
     task_4 = PythonOperator(task_id='task_4', python_callable=dump)
     task_5 = PythonOperator(task_id='task_5', python_callable=dump)
 
+    # 의존성 부여
     start >> task_1 >> task_2 >> task_5
     start >> task_3 >> task_4 >> task_5
