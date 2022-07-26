@@ -47,6 +47,13 @@ airflow-spark 연동하기
 pip install apache-airflow-providers-apache-spark
 ```
 
+### Docker로 실행하기 
+```bash 
+mkdir ./dags
+mkdir ./logs
+mkdir ./plugins
+docker-compose up -d
+```
 
 
 
