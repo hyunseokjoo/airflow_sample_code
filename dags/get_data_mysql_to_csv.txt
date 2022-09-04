@@ -1,0 +1,4 @@
+id,name,customerType,discountRatio
+1,sujan,bronze,1.0
+2,james,silver,0.9
+3,tom,platinum,0.8
