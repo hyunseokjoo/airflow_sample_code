@@ -65,6 +65,34 @@ def execute_test(
     return False
 
 
+def log_result(
+    db_conn,
+    script_1,
+    script_2,
+    comp_operator,
+    result):
+
+    m_query = """INSERT INTO
+            validatio_run_history(
+                script_1, script_2,
+                comp_operator,
+                test_result,
+                test_run_at
+            )
+            VALUES(%s, %s, %s, %s,
+            crruent_timestamp);    
+    """
+
+    m_cursor = db_conn.cursor()
+    m_cursor.execute(
+        m_query,
+        (script_1, script_2, comp_operator, result))
+    db_conn.commit()
+    m_cursor.close()
+    db_conn.close()
+
+    return
+
 # python script 실행시 실행 되는 곳
 if __name__ == "__main__":
 
@@ -106,7 +134,14 @@ if __name__ == "__main__":
         comp_operator
     )
 
+    log_result(db_conn,
+    script_1,
+    script_2,
+    comp_operator,
+    test_result)
+
     print("Result of test: " + str(test_result))
+
 
     if test_result == True:
         exit(0)
