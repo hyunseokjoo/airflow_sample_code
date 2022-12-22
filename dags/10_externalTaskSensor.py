@@ -3,7 +3,6 @@ from datetime import datetime, timedelta
 from pendulum.tz.timezone import Timezone
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from airflow.operators.dummy import DummyOperator
 from airflow.sensors.external_task import ExternalTaskSensor
 
 kst = Timezone('Asia/Seoul')

@@ -1,7 +1,6 @@
-from platform import python_branch
 from time import sleep
 from pendulum.tz.timezone import Timezone
-from datetime import datetime, timedelta, tzinfo
+from datetime import datetime, timedelta
 
 from airflow import DAG
 from airflow.operators.python import PythonOperator

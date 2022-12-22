@@ -3,7 +3,6 @@ from time import sleep
 import json
 
 from airflow import DAG
-from airflow.providers.sqlite.operators.sqlite import SqliteOperator
 from airflow.providers.http.operators.http import SimpleHttpOperator
 from airflow.operators.python import PythonOperator
 

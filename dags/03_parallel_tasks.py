@@ -1,4 +1,3 @@
-from time import sleep
 from datetime import datetime, timedelta
 from airflow import DAG
 from pendulum.tz.timezone import Timezone

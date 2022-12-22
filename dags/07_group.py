@@ -1,4 +1,3 @@
-from random import sample
 from time import sleep
 from datetime import datetime, timedelta
 from pendulum.tz.timezone import Timezone

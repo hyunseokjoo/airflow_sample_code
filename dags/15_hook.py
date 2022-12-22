@@ -1,11 +1,10 @@
 import csv
 import logging
 from datetime import datetime, timedelta
-from tempfile import NamedTemporaryFile
 
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from airflow.providers.mysql.operators.mysql import MySqlOperator, MySqlHook
+from airflow.providers.mysql.operators.mysql import MySqlHook
 
 
 default_args = {
@@ -45,4 +44,5 @@ with DAG(
         task_id="mysql_to_csv",
         python_callable=mysql_hook
     )
+    
     task1

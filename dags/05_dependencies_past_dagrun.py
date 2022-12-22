@@ -3,12 +3,10 @@
 Depends_on_past : 이전 날짜의 task instance 들 중 하나라도 fail일 때는 성공할때 까지 기다린다
 Wait_for_downstream : 이전 날짜의 task instance 들 중 fail인 것까지 작동하고 나머지는 no status로 대기한다.
 """
-from time import sleep
-from datetime import datetime, timedelta
+from datetime import timedelta
 from pendulum.tz.timezone import Timezone
 from airflow import DAG
 from airflow.operators.dummy_operator import DummyOperator
-from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
 
 

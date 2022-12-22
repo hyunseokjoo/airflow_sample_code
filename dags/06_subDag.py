@@ -8,10 +8,9 @@ SubDag를 사용하여 얻는 점
 '''
 from time import sleep
 from pendulum.tz.timezone import Timezone
-from datetime import datetime, timedelta, tzinfo
+from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from airflow.operators.dummy import DummyOperator
 from airflow.operators.subdag import SubDagOperator
 import subDags.child_subdag1 as cs1
 import subDags.child_subdag2 as cs2
